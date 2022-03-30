@@ -66,7 +66,7 @@ class HDHarmfulBox : HDActor
 			if(errorthresh)
 			{
 				if(hd_debug)console.printf("[HazardousLooting] Player Health: "..ppp.health);
-				if(hd_debug)console.printf("[HazardousLooting] Threshold: %"..errorchance);
+				if(hd_debug)console.printf("[HazardousLooting] Threshold: "..int(errorchance));
 				if(ppp.health <= errorthresh)
 				{
 					if(errorchance > 0)
