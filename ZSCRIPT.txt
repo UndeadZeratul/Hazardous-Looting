@@ -1,0 +1,6 @@
+version "4.6"
+#include "zscript/base_harmfulbox.zsc"
+#include "zscript/hlt_spikehit.zsc"
+#include "zscript/hlt_staticshock.zsc"
+#include "zscript/hlt_staticshield.zsc"
+#include "zscript/hlt_burningpassion.zsc"
