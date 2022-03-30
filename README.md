@@ -1,5 +1,5 @@
 # Preface
- Looting is a pretty safe thing to do, save for the whole 'could be shot at' bit, isn't it? Well, it *was* safe, until now. Watch out for the pointy bits and foreign glands of your to be scavanged corpses...
+ Looting is a pretty safe thing to do, save for the whole 'could be shot at' bit, isn't it? Well, it *was* safe, until now. Watch out for the pointy bits and foreign glands of your to be scavenged corpses...
 # Hazardous Looting
  A mod-mod for the Hideous Destructor expansion 'Ugly as Sin'. This mod will do nothing without Ugly as Sin installed.
 # Features
