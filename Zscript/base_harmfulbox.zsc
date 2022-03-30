@@ -1,0 +1,70 @@
+class HDHarmfulBox : HDActor
+{
+	int damagemin;
+	property damagemin : damagemin;
+	int damagemax;
+	property damagemax : damagemax;
+	bool givetargetbody;
+	property givetargetbody : givetargetbody;
+	string damagetype;
+	property damagetype : damagetype;
+	class<actor>  visualaid;
+	property visualaid : visualaid;
+	class<actor>  prize;
+	property prize : prize;
+	
+	default
+	{
+		HDHarmfulBox.damagemin 1;
+		HDHarmfulBox.damagemax 1;
+		HDHarmfulBox.givetargetbody true;
+		HDHarmfulBox.damagetype "natural";
+		HDHarmfulBox.visualaid "HDSmoke";
+		HDHarmfulBox.prize "HDSmoke";		
+		
+		+solid
+		+nogravity
+		+noblockmap
+		radius 100;
+		height 100;
+	}
+	
+	override void tick()
+	{
+		super.tick();
+		if(isfrozen())return;
+		trymove(pos.xy, false);
+		
+		if(blockingmobj)
+		{
+			int damage = random(damagemin, damagemax);
+			int putimes = -1;
+			let ppp = HDplayerpawn(blockingmobj);
+
+			// Only damage you if you... you know, would take damage.
+			if(damage)
+			{
+				if(givetargetbody)ppp.GiveBody(damage, ppp.SpawnHealth());
+				if(damage)ppp.DamageMobj(ppp,ppp,damage,damagetype);
+			}
+			
+			// Spawn a user-defined actor, harmful or not. 
+			if(prize != "")
+			{
+				let pri = Actor.Spawn(prize, pos + (0,0,3), SXF_TRANSFERSPECIAL | SXF_NOCHECKPOSITION);
+				if(pri)pri.vel = (frandom[loot](-1, 1), frandom[loot](-1, 1), frandom[loot](1, 2));
+			}
+			if(visualaid != "")
+			{
+				Actor.Spawn(visualaid, pos + (0,0,3), SXF_TRANSFERSPECIAL | SXF_NOCHECKPOSITION);
+			}
+			destroy();
+		}
+	}
+	
+	// Only damages players. Probably could just be HDActors.
+	override bool cancollidewith(actor other,bool passive)
+	{
+		return hdplayerpawn(other);
+	}	
+}

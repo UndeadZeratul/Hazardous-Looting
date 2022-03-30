@@ -1,0 +1,13 @@
+// All-purpose pointy bits. Ow. 
+class HDSpikeHit : HDHarmfulBox 
+{
+	default
+	{
+		HDHarmfulBox.damagemin 2;
+		HDHarmfulBox.damagemax 4;
+		HDHarmfulBox.givetargetbody true;
+		HDHarmfulBox.damagetype "natural";
+		HDHarmfulBox.visualaid "";
+		HDHarmfulBox.prize "";
+	}
+}

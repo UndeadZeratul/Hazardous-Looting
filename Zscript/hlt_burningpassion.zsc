@@ -1,0 +1,13 @@
+// Such a lust for blur... WHO?
+class HDBurningPassion : HDHarmfulBox 
+{
+	default
+	{
+		HDHarmfulBox.damagemin 3;
+		HDHarmfulBox.damagemax 6;
+		HDHarmfulBox.givetargetbody false;
+		HDHarmfulBox.damagetype "thermal";
+		HDHarmfulBox.visualaid "HDSmoke";
+		HDHarmfulBox.prize "HDBlurSphere";	
+	}
+}
