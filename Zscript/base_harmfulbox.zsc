@@ -38,9 +38,14 @@ class HDHarmfulBox : HDActor
 		if(blockingmobj)
 		{
 			int damage = random(damagemin, damagemax);
-			int putimes = -1;
 			let ppp = HDplayerpawn(blockingmobj);
 
+			// In case you end up somehow setting this to "".
+			if(damagetype == "")
+			{
+				damagetype = "natural";
+			}
+			
 			// Only damage you if you... you know, would take damage.
 			if(damage)
 			{
