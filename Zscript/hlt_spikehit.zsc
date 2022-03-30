@@ -3,6 +3,8 @@ class HDSpikeHit : HDHarmfulBox
 {
 	default
 	{
+		HDHarmfulBox.errorthresh 70;
+		HDHarmfulBox.errorchance 50;
 		HDHarmfulBox.damagemin 2;
 		HDHarmfulBox.damagemax 4;
 		HDHarmfulBox.givetargetbody true;

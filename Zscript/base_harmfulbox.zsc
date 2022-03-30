@@ -1,5 +1,11 @@
 class HDHarmfulBox : HDActor
 {
+	int errorthresh;
+	property errorthresh : errorthresh;
+	int errorchance;
+	property errorchance : errorchance;
+
+
 	int damagemin;
 	property damagemin : damagemin;
 	int damagemax;
@@ -8,6 +14,8 @@ class HDHarmfulBox : HDActor
 	property givetargetbody : givetargetbody;
 	string damagetype;
 	property damagetype : damagetype;
+	
+	
 	class<actor>  visualaid;
 	property visualaid : visualaid;
 	class<actor>  prize;
@@ -21,6 +29,10 @@ class HDHarmfulBox : HDActor
 	
 	default
 	{
+		HDHarmfulBox.errorthresh 0;
+		HDHarmfulBox.errorchance 0;
+		
+
 		HDHarmfulBox.damagemin 0;
 		HDHarmfulBox.damagemax 0;
 		HDHarmfulBox.givetargetbody true;
@@ -48,6 +60,31 @@ class HDHarmfulBox : HDActor
 			int damage = random(damagemin, damagemax);
 			int burn   = random(burnmin, burnmax);
 			let ppp = HDplayerpawn(blockingmobj);
+			
+			// %-chance based method. 
+			if(errorthresh)
+			{
+				console.printf("Player.health "..ppp.health);
+				if(ppp.health <= errorthresh)
+				{
+					if(errorchance > 0)
+					{
+						if(random(0, 100) >= (100 - errorchance))
+						{
+							damage=0;
+						}
+					}
+					else
+					{
+						damage = 0;
+					}
+				}
+				else
+				{
+					damage = 0;
+				}
+			}
+
 
 			// In case you end up somehow setting this to "".
 			if(damagetype == "")
@@ -55,9 +92,9 @@ class HDHarmfulBox : HDActor
 				damagetype = "natural";
 			}
 			
-			if(burn)
+			if(burn != 0)
 			{
-				A_Immolate(ppp,ppp, burn);
+				A_Immolate(ppp,ppp,burn);
 			}
 			
 			

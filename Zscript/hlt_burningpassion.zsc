@@ -3,6 +3,7 @@ class HDBurningPassion : HDHarmfulBox
 {
 	default
 	{
+	
 		HDHarmfulBox.damagemin 3;
 		HDHarmfulBox.damagemax 6;
 		HDHarmfulBox.givetargetbody false;

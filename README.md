@@ -6,6 +6,8 @@
  A baseclass called HDHarmfulBox, which upon spawning will:
  - Collide with a player class, then spawn a payload defined by:
  ```
+ - errorthresh    (health value a risk for injury begins at),
+ - errorchance    (chance for your hands to slip onto something harmful (%, out of 100)),
  - damagemin      (minimum forced damage),
  - damagemax      (maximum forced damage),
  - burnmin        (minimum forced immolation),
