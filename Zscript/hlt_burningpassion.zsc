@@ -8,6 +8,8 @@ class HDBurningPassion : HDHarmfulBox
 		HDHarmfulBox.givetargetbody false;
 		HDHarmfulBox.damagetype "thermal";
 		HDHarmfulBox.visualaid "HDSmoke";
-		HDHarmfulBox.prize "HDBlurSphere";	
+		HDHarmfulBox.prize "HDBlurSphere";
+		HDHarmfulBox.burnmin 1;
+		HDHarmfulBox.burnmax 2;
 	}
 }

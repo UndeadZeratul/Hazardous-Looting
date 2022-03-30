@@ -6,11 +6,14 @@
  A baseclass called HDHarmfulBox, which upon spawning will:
  - Collide with a player class, then spawn a payload defined by:
  ```
- - damagemin  (minimum forced damage),
- - damagemax  (maximum forced damage),
- - damagetype (the type that the forced damage is),
- - prize      (item to spawn for the player's troubles. Can be blank ("")),
- - visualaid  (vfx actor to spawn (eg, smoke, flames, etc). Can be any actor...).
+ - damagemin      (minimum forced damage),
+ - damagemax      (maximum forced damage),
+ - burnmin        (minimum forced immolation),
+ - burnmax        (maximum forced immolation),
+ - damagetype     (the type that the forced damage is),
+ - givetargetbody (whether or not to give the target 'body' (enable for melee-type damage)),
+ - prize          (item to spawn for the player's troubles. Can be blank ("")),
+ - visualaid      (vfx actor to spawn (eg, smoke, flames, etc). Can be any actor...).
  ```
  # Compat
   Supports monsters from the following mods by default:

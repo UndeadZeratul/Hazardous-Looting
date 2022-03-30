@@ -13,15 +13,23 @@ class HDHarmfulBox : HDActor
 	class<actor>  prize;
 	property prize : prize;
 	
+	
+	int burnmin;
+	property burnmin : burnmin;
+	int burnmax;
+	property burnmax : burnmax;
+	
 	default
 	{
-		HDHarmfulBox.damagemin 1;
-		HDHarmfulBox.damagemax 1;
+		HDHarmfulBox.damagemin 0;
+		HDHarmfulBox.damagemax 0;
 		HDHarmfulBox.givetargetbody true;
 		HDHarmfulBox.damagetype "natural";
 		HDHarmfulBox.visualaid "HDSmoke";
-		HDHarmfulBox.prize "HDSmoke";		
-		
+		HDHarmfulBox.prize "HDSmoke";	
+
+		HDHarmfulBox.burnmin 0;	
+		HDHarmfulBox.burnmax 0;	
 		+solid
 		+nogravity
 		+noblockmap
@@ -38,6 +46,7 @@ class HDHarmfulBox : HDActor
 		if(blockingmobj)
 		{
 			int damage = random(damagemin, damagemax);
+			int burn   = random(burnmin, burnmax);
 			let ppp = HDplayerpawn(blockingmobj);
 
 			// In case you end up somehow setting this to "".
@@ -45,6 +54,12 @@ class HDHarmfulBox : HDActor
 			{
 				damagetype = "natural";
 			}
+			
+			if(burn)
+			{
+				A_Immolate(ppp,ppp, burn);
+			}
+			
 			
 			// Only damage you if you... you know, would take damage.
 			if(damage)
