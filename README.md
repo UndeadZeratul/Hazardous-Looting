@@ -1,7 +1,7 @@
 # Preface
- This mod will do nothing without Ugly as Sin installed.
+ Looting is a pretty safe thing to do, save for the whole 'could be shot at' bit, isn't it? Well, it *was* safe, until now. Watch out for the pointy bits and foreign glands of your to be scavanged corpses...
 # Hazardous Looting
- A mod-mod for the Hideous Destructor expansion 'Ugly as Sin'.
+ A mod-mod for the Hideous Destructor expansion 'Ugly as Sin'. This mod will do nothing without Ugly as Sin installed.
 # Features
  A baseclass called HDHarmfulBox, which upon spawning will:
  - Collide with a player class, then spawn a payload defined by:
