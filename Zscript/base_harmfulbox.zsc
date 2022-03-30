@@ -65,7 +65,8 @@ class HDHarmfulBox : HDActor
 			// %-chance based method. 
 			if(errorthresh)
 			{
-				console.printf("Player.health "..ppp.health);
+				if(hd_debug)console.printf("[HazardousLooting] Player Health: "..ppp.health);
+				if(hd_debug)console.printf("[HazardousLooting] Threshold: %"..errorchance);
 				if(ppp.health <= errorthresh)
 				{
 					if(errorchance > 0)
