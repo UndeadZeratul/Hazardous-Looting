@@ -60,6 +60,7 @@ class HDHarmfulBox : HDActor
 			int damage = random(damagemin, damagemax);
 			int burn   = random(burnmin, burnmax);
 			let ppp = HDplayerpawn(blockingmobj);
+			bool donthurt;
 			
 			// %-chance based method. 
 			if(errorthresh)
@@ -71,40 +72,46 @@ class HDHarmfulBox : HDActor
 					{
 						if(random(0, 100) >= (100 - errorchance))
 						{
-							damage=0;
+							donthurt=true;
+						}
+						else
+						{
+							donthurt=false;
 						}
 					}
 					else
 					{
-						damage = 0;
+						donthurt=true;
 					}
 				}
 				else
 				{
-					damage = 0;
+					donthurt=true;
 				}
 			}
 
 
-			// In case you end up somehow setting this to "".
-			if(damagetype == "")
+			if(!donthurt)
 			{
-				damagetype = "natural";
+				// In case you end up somehow setting this to "".
+				if(damagetype == "")
+				{
+					damagetype = "natural";
+				}
+				
+				if(burn != 0)
+				{
+					A_Immolate(ppp,ppp,burn);
+				}
+				
+				
+				// Only damage you if you... you know, would take damage.
+				if(damage)
+				{
+					if(givetargetbody)ppp.GiveBody(damage, ppp.SpawnHealth());
+					if(damage)ppp.DamageMobj(ppp,ppp,damage,damagetype);
+				}
 			}
-			
-			if(burn != 0)
-			{
-				A_Immolate(ppp,ppp,burn);
-			}
-			
-			
-			// Only damage you if you... you know, would take damage.
-			if(damage)
-			{
-				if(givetargetbody)ppp.GiveBody(damage, ppp.SpawnHealth());
-				if(damage)ppp.DamageMobj(ppp,ppp,damage,damagetype);
-			}
-			
 			// Spawn a user-defined actor, harmful or not. 
 			if(prize != "")
 			{
