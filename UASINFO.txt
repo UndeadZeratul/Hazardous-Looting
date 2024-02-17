@@ -1,9 +1,9 @@
 Looting:pistolzombieman:HDStaticShield
 Looting:biomechanoidminor:HDStaticShock, HDStaticShield
 Looting:biomechanoidmajor:HDStaticShock*3, HDStaticShield
-Looting:technospider:HDStaticShock*4, HDStaticShield
+Looting:Manticore:HDStaticShock*4, HDStaticShield
 Looting:hdhellsquire:HDBurningPassion*3
 Looting:hellsquire:HDBurningPassion*3
-Looting:Serpentipede:HDSpikeHit*4
-Looting:Regentipede:HDBurningPassion, HDSpikeHit*4
-Looting:Ardentipede:HDBurningPassion, HDSpikeHit*4
+Looting:FighterImp:HDSpikeHit*4
+Looting:HealerImp:HDBurningPassion, HDSpikeHit*4
+Looting:MageImp:HDBurningPassion, HDSpikeHit*4
