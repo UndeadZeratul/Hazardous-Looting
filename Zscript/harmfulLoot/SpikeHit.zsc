@@ -1,8 +1,6 @@
-// All-purpose pointy bits. Ow. 
-class HDSpikeHit : HDHarmfulBox 
-{
-	default
-	{
+// All-purpose pointy bits. Ow.
+class HDSpikeHit : HDHarmfulBox {
+	default {
 		HDHarmfulBox.errorthresh 70;
 		HDHarmfulBox.errorchance 50;
 		HDHarmfulBox.damagemin 2;

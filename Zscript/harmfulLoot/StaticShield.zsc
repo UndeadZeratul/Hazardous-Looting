@@ -1,8 +1,6 @@
 // Shield Pickup.
-class HDStaticShield : HDHarmfulBox 
-{
-	default
-	{
+class HDStaticShield : HDHarmfulBox {
+	default {
 		HDHarmfulBox.damagemin 2;
 		HDHarmfulBox.damagemax 5;
 		HDHarmfulBox.givetargetbody false;
@@ -12,15 +10,10 @@ class HDStaticShield : HDHarmfulBox
 	}
 }
 
-
-
-class ShieldCoreChecker : IdleDummy
-{
-	states
-	{
+class ShieldCoreChecker : IdleDummy {
+	states {
 		Spawn:
-			TNT1 A 0 NODELAY
-			{
+			TNT1 A 0 NODELAY {
 				string tospawn = "ShieldCore";
 				for(int i=0;i<allactorclasses.size();i++)
 				{
@@ -36,4 +29,3 @@ class ShieldCoreChecker : IdleDummy
 			stop;
 	}
 }
-
